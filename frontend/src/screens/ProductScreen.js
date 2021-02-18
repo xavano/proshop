@@ -6,10 +6,8 @@ import Rating from '../components/Rating'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Meta from '../components/Meta'
-import {
-  listProductDetails,
-  createProductReview,
-} from '../actions/productActions'
+import { listProductDetails, createProductReview } from '../actions/productActions'
+import { addToCart } from '../actions/cartActions'
 import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants'
 
 const ProductScreen = ({ history, match }) => {
@@ -44,7 +42,8 @@ const ProductScreen = ({ history, match }) => {
   }, [dispatch, match, successProductReview, product._id])
 
   const addToCartHandler = () => {
-    history.push(`/cart/${match.params.id}?qty=${qty}`)
+    dispatch(addToCart(product._id, qty))
+    history.push('/cart')
   }
 
   const submitHandler = (e) => {
