@@ -1,3 +1,12 @@
+body {
+	background-color: #005082;
+}
+
+.logo {
+	height: 30%;
+	width: 30%;
+}
+
 .reviews {
 	display: block;
 }
@@ -13,6 +22,7 @@ h3 {
 h1 {
 	font-size: 1.8rem;
 	padding: 1rem 0;
+	color: #fff;
 }
 
 h2 {
